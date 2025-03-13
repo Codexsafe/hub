@@ -35,3 +35,77 @@
     background-color: #EAEAEA !important;
 }
 
+table.dataTable{
+    margin-top: 15px !important;
+}
+
+#loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #727CF5;
+  font-size: 50px;
+  font-size: 20px;
+  display: none; /* Hidden by default */
+}
+
+/* Hide content until data is loaded */
+.content {
+  display: none;
+}
+
+.mdi-white-balance-sunny, .mdi-weather-night{
+font-size: 22px;
+}
+
+/* Export Button */
+
+.buttons-collection {
+background-color: #727CF5;
+border: none;
+border-radius: 3px;
+padding: 4px 8px 4px 8px;
+margin-right: 3px;
+}
+
+.dt-down-arrow {
+display: none !important;
+}
+
+.dt-button-collection{
+border: none !important;
+width: 151px !important;
+}
+
+.dt-button-collection .dt-button {
+min-width: 150px !important;
+}
+
+.buttons-html5, .export-btn{
+background-color: white !important;
+color: black;
+border: none !important;
+text-align: left;
+padding-left: 10px;
+height: 30px;
+width: 80px !important;
+}
+
+.buttons-html5:hover, .export-btn:hover{
+background-color: #EAEAEA !important;
+}
+
+.buttons-columnVisibility{
+background-color: white !important;
+color: gray;
+border: none !important;
+text-align: left;
+padding-left: 10px;
+height: 30px;
+width: 80px !important;
+}
+
+.buttons-html5:hover, .buttons-columnVisibility:hover{
+background-color: #EAEAEA !important;
+}
