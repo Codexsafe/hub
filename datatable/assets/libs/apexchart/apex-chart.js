@@ -215,94 +215,125 @@
 
 
 // Chart2
- 
- 
+
 (function() {
-    ["#727cf5", "#0acf97", "#fa5c7c", "#6c757d", "#39afd1"]
-    , dataColors = $("#stacked-bar").data("colors")
-    , options2 = {
-      chart: {
-          height: 380,
-          type: "donut",
-          stacked: !0,    
-          // stackType: "100%",
-          toolbar: {
-              show: !1
-          }
-      },
-      plotOptions: {
-          bar: {
-              horizontal: !1
-          }
-      },
-      stroke: {
-          show: !1
-      },
-      series: [{
-          name: "SingleFile",
-          data: [177,218,189,187,140,177,186]
-      }, {
-          name: "BatchFiles",
-          data: [46,44,27,45,23,43,46]
-      }, {
-          name: "SetFiles",
-          data: [0,0,5,0,2,2,3]
-      }, {
-          name: "WebSingle",
-          data: [0,0,0,0,0,0,0]   
-      }, {
-          name: "WebBatch",
-          data: [0,0,0,0,0,0,0]
-      }, {
-          name: "FreeSingle",
-          data: [0,0,0,0,0,0,0]   
-      }, {
-          name: "FreeBatch",
-          data: [0,0,0,0,0,0,0]
-      }],
-      xaxis: {
-          categories: ["23-07-2024","24-07-2024","25-07-2024","26-07-2024","27-07-2024","28-07-2024","29-07-2024"],
-          labels: {
-              formatter: function(o) {
-                  return o + "K"
-              }
-          },
-          axisBorder: {
-              show: !1
-          }
-      },
-      yaxis: {
-          title: {
-              text: void 0
-          }
-      },
-      colors: colors = dataColors ? dataColors.split(",") : colors,
-      tooltip: {
-          y: {
-              formatter: function(o) {
-                  return o + "K"
-              }
-          }
-      },
-      fill: {
-          opacity: 1
-      },
-      states: {
-          hover: {
-              filter: "none"
-          }
-      },
-      legend: {
-          position: "top",
-          horizontalAlign: "center",
-          offsetY: 10
-      },
-      grid: {
-          borderColor: "#f1f3fa"
-      },
-      dataLabels: {
-          enabled: true
-      },
-  }
-    , colors = (chart2 = new ApexCharts(document.querySelector("#stacked-bar"),options2)).render()
+    let dataColors = $("#donut-chart").data("colors");
+    let colors = dataColors ? dataColors.split(",") : ["#727cf5", "#0acf97", "#fa5c7c", "#6c757d", "#39afd1"];
+    
+    let options = {
+        chart: {
+            height: 380,
+            type: "donut"
+        },
+        series: [
+            177 + 218 + 189 + 187 + 140 + 177 + 186, // Meter Management
+            46 + 44 + 27 + 45 + 23 + 43 + 46, // Solar
+            0 + 0 + 5 + 0 + 2 + 2 + 3, // EV
+            0 + 0 + 0 + 0 + 0 + 0 + 0  // Essentials
+        ],
+        labels: ["Meter Management", "Solar", "EV", "Essentials"],
+        colors: colors,
+        legend: {
+            position: "bottom"
+        },
+        tooltip: {
+            y: {
+                formatter: function(val) {
+                    return val + "K";
+                }
+            }
+        },
+        plotOptions: {
+            pie: {
+                donut: {
+                    size: "70%"
+                }
+            }
+        }
+    };
+    
+    let chart = new ApexCharts(document.querySelector("#donut-chart"), options);
+    chart.render();
 })();
+
+ 
+// (function() {
+//     ["#727cf5", "#0acf97", "#fa5c7c", "#6c757d", "#39afd1"]
+//     , dataColors = $("#stacked-bar").data("colors")
+//     , options2 = {
+//       chart: {
+//           height: 380,
+//           type: "bar",
+//           stacked: !0,    
+//           // stackType: "100%",
+//           toolbar: {
+//               show: !1
+//           }
+//       },
+//       plotOptions: {
+//           bar: {
+//               horizontal: !1
+//           }
+//       },
+//       stroke: {
+//           show: !1
+//       },
+//       series: [{
+//           name: "Meter Management",
+//           data: [177,218,189,187,140,177,186]
+//       }, {
+//           name: "Solar",
+//           data: [46,44,27,45,23,43,46]
+//       }, {
+//           name: "EV",
+//           data: [0,0,5,0,2,2,3]
+//       }, {
+//           name: "Essentials",
+//           data: [0,0,0,0,0,0,0]   
+//       }],
+//       xaxis: {
+//           categories: ["23-07-2024","24-07-2024","25-07-2024","26-07-2024","27-07-2024","28-07-2024","29-07-2024"],
+//           labels: {
+//               formatter: function(o) {
+//                   return o + "K"
+//               }
+//           },
+//           axisBorder: {
+//               show: !1
+//           }
+//       },
+//       yaxis: {
+//           title: {
+//               text: void 0
+//           }
+//       },
+//       colors: colors = dataColors ? dataColors.split(",") : colors,
+//       tooltip: {
+//           y: {
+//               formatter: function(o) {
+//                   return o + "K"
+//               }
+//           }
+//       },
+//       fill: {
+//           opacity: 1
+//       },
+//       states: {
+//           hover: {
+//               filter: "none"
+//           }
+//       },
+//       legend: {
+//           position: "top",
+//           horizontalAlign: "center",
+//           offsetY: 10
+//       },
+//       grid: {
+//           borderColor: "#f1f3fa"
+//       },
+//       dataLabels: {
+//           enabled: true
+//       },
+//   }
+//     , colors = (chart2 = new ApexCharts(document.querySelector("#stacked-bar"),options2)).render()
+// })();
