@@ -223,7 +223,7 @@
     , options2 = {
       chart: {
           height: 380,
-          type: "bar",
+          type: "donut",
           stacked: !0,    
           // stackType: "100%",
           toolbar: {
