@@ -109,3 +109,18 @@ width: 80px !important;
 .buttons-html5:hover, .buttons-columnVisibility:hover{
 background-color: #EAEAEA !important;
 }
+
+.row {
+    display: flex;
+}
+
+.col-xl-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
