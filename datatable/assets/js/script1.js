@@ -35,20 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('themeico');
 
     function applyTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
         if (theme === 'dark') {
-            document.documentElement.setAttribute('data-bs-theme', 'dark');
-            document.documentElement.setAttribute('data-menu-color', 'dark');
-            themeIcon.classList.remove('mdi-weather-night'); // Ensure sun icon is removed
-            themeIcon.classList.add('mdi-white-balance-sunny'); // Ensure moon icon is added
+            themeIcon.classList.remove('mdi-weather-night');
+            themeIcon.classList.add('mdi-white-balance-sunny');
         } else {
-            document.documentElement.setAttribute('data-bs-theme', 'light');
-            document.documentElement.setAttribute('data-menu-color', 'light');
-            themeIcon.classList.remove('mdi-white-balance-sunny'); // Ensure moon icon is removed
-            themeIcon.classList.add('mdi-weather-night'); // Ensure sun icon is added
+            themeIcon.classList.remove('mdi-white-balance-sunny');
+            themeIcon.classList.add('mdi-weather-night');
         }
     }
 
-    // Check saved theme in session storage
+    // Load theme from session storage
     const savedTheme = sessionStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
