@@ -31,29 +31,5 @@ function fetchData() {
         
 <!-- Theme Switcher -->
 document.addEventListener('DOMContentLoaded', () => {
-    const themeSwitch = document.getElementById('light-dark-mode');
-    const themeIcon = document.getElementById('themeico');
-
-    function applyTheme(theme) {
-        document.documentElement.setAttribute('data-bs-theme', theme);
-        if (theme === 'dark') {
-            themeIcon.classList.remove('mdi-weather-night');
-            themeIcon.classList.add('mdi-white-balance-sunny');
-        } else {
-            themeIcon.classList.remove('mdi-white-balance-sunny');
-            themeIcon.classList.add('mdi-weather-night');
-        }
-    }
-
-    // Load theme from session storage
-    const savedTheme = sessionStorage.getItem('theme') || 'dark';
-    applyTheme(savedTheme);
-
-    // Toggle theme on click
-    themeSwitch.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(newTheme);
-        sessionStorage.setItem('theme', newTheme);
-    });
+    document.documentElement.setAttribute('data-bs-theme', 'light');
 });
